@@ -3,7 +3,8 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "../Vector/Vector.hpp"
+#include "../Vector/Vector3.hpp"
+#include "../Graphics/Color.hpp"
 #include "../Graphics/CoordinateSystem.hpp"
 
 //***///***///---\\\***\\\***\\\___///***___***\\\___///***///***///---\\\***\\\***\\ 
@@ -16,6 +17,20 @@ public:
 
 	void Draw(sf::RenderWindow& window);
 
+	double ambientCoef;
+	double diffusionCoef;
+	double glareCoef;
+	double glareCosExp;
+
+	Color colorMaterial;
+	Color colorBackground;
+
+	Color colorLightSource;
+	Color colorLightAmbient;
+
+	Vector3 lightSource;
+	Vector3 viewPoint;
+
 private:
 	void Compute();
 
@@ -24,19 +39,8 @@ private:
 	const int sceneWidth;
 	const int sceneHeight;
 
-	double ambientCoef;
-	double diffusionCoef;
-
-	sf::Color colorMaterial;
-	sf::Color colorBackground;
-
-	sf::Color colorLightSource;
-	sf::Color colorLightAmbient;
-
 	sf::Image scene;
 	CoordinateSystem coordSys;
-
-	Vector lightSource;
 };
 
 //***///***///---\\\***\\\***\\\___///***___***\\\___///***///***///---\\\***\\\***\\ 

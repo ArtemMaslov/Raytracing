@@ -5,33 +5,27 @@
 #include <SFML/Window.hpp>
 
 #include "CoordinateSystem.hpp"
-#include "../Vector/Vector.hpp"
+#include "../Vector/Vector2.hpp"
+#include "../Vector/Vector3.hpp"
 
 //***///***///---\\\***\\\***\\\___///***___***\\\___///***///***///---\\\***\\\***\\ 
 //***///***///---\\\***\\\***\\\___///***___***\\\___///***///***///---\\\***\\\***\\ 
 
-void DrawLine(sf::RenderWindow& window, 
-			  const float x1, const float y1, const float x2, const float y2,
-			  const sf::Color& color);
+void DrawLine(sf::RenderWindow& window, const Point2& point1, const Point2& point2, const sf::Color& color);
 
-class RenderVector : public Vector
+class RenderVector
 {
 public:
-	//RenderVector(double x, double y);
+	RenderVector(sf::RenderWindow& window, const CoordinateSystem& coordSys);
 
-	//RenderVector();
-
-	//void DrawCoord(sf::RenderWindow& window, const CoordinateSystem& sc, float x0, float y0);
-	//
-	//void DrawPixel(sf::RenderWindow& window, float x0, float y0);
-
-	float ArrowWidth  = 16;
-	float ArrowHeight = 4;
-
-	sf::Color Color   = sf::Color::Black;
+	void Draw(const Vector3& startPoint, const Vector3& vector, const sf::Color& color = sf::Color::Black);
 
 private:
-	//void DrawVector(sf::RenderWindow& window, const Point& p1, const Point& p2);
+	const float ArrowWidth  = 16;
+	const float ArrowHeight = 4;
+
+	sf::RenderWindow& window;
+	const CoordinateSystem& coordSys;
 };
 
 //***///***///---\\\***\\\***\\\___///***___***\\\___///***///***///---\\\***\\\***\\ 

@@ -113,6 +113,9 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)..\..\SFML-2.5.1-windows-vc14-64-bit\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
+      <Optimization>Disabled</Optimization>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -130,6 +133,8 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)..\..\SFML-2.5.1-windows-vc14-64-bit\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
+      <Optimization>MaxSpeed</Optimization>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -141,19 +146,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Animation\Iterator.cpp" />
     <ClCompile Include="Graphics\Color.cpp" />
     <ClCompile Include="Graphics\CoordinateSystem.cpp" />
+    <ClCompile Include="Graphics\DoubleMath.cpp" />
     <ClCompile Include="Graphics\Graphics.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Raycasting\Raycasting.cpp" />
-    <ClCompile Include="Vector\Vector.cpp" />
+    <ClCompile Include="Raycasting\RaycastingTest.cpp" />
+    <ClCompile Include="Vector\Basis.cpp" />
+    <ClCompile Include="Vector\Matrix2.cpp" />
+    <ClCompile Include="Vector\Matrix3.cpp" />
+    <ClCompile Include="Vector\Vector2.cpp" />
+    <ClCompile Include="Vector\Vector3.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Graphics\Color.h" />
+    <ClInclude Include="Animation\Iterator.hpp" />
+    <ClInclude Include="Graphics\Color.hpp" />
     <ClInclude Include="Graphics\CoordinateSystem.hpp" />
+    <ClInclude Include="Graphics\DoubleMath.hpp" />
     <ClInclude Include="Graphics\Graphics.hpp" />
     <ClInclude Include="Raycasting\Raycasting.hpp" />
-    <ClInclude Include="Vector\Vector.hpp" />
+    <ClInclude Include="Raycasting\RaycastingTest.hpp" />
+    <ClInclude Include="Vector\Basis.hpp" />
+    <ClInclude Include="Vector\Matrix2.hpp" />
+    <ClInclude Include="Vector\Matrix3.hpp" />
+    <ClInclude Include="Vector\Vector2.hpp" />
+    <ClInclude Include="Vector\Vector3.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

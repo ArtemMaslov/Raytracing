@@ -3,7 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "../Vector/Vector.hpp"
+#include "../Vector/Vector3.hpp"
 
 //***///***///---\\\***\\\***\\\___///***___***\\\___///***///***///---\\\***\\\***\\ 
 //***///***///---\\\***\\\***\\\___///***___***\\\___///***///***///---\\\***\\\***\\ 
@@ -42,33 +42,41 @@ class CoordinateSystem
 public:
 	CoordinateSystem(Point2 origin, int width_p, int height_p, double width_c, double height_c);
 
-	Point2 CoordToPixel(const Vector& coordinate) const;
+	Point2 CoordToPixel(const Vector3& coordinate) const;
 
-	Vector PixelToCoord(const Point2& pixel) const;
+	Vector3 PixelToCoord3(const Point2& pixel) const;
 
 	const Point2& GetOrigin();
 
 	int GetWidthP();
 	int GetHeightP();
 
+	void DrawAxes(sf::RenderWindow& window, const sf::Color& color) const;
+
 private:
-	Point2 origin_p;
+	const Point2 origin_p;
 
-	int    width_p;
-	double width_c;
+	const int    width_p;
+	const double width_c;
 
-	int    height_p;
-	double height_c;
+	const int    height_p;
+	const double height_c;
 
 	// Коэффициент перевода из координат в пиксели. xConvert = (width_p) / (width_c);
 	// Координаты -> пиксели   : умножаем на xConvert.
 	// Пиксели    -> координаты: делим    на xConvert.
-	double xConvert;
+	const double xConvert;
 
 	// Коэффициент перевода из координат в пиксели. yConvert = (height_p) / (height_c);
 	// Координаты -> пиксели   : умножаем на yConvert.
 	// Пиксели    -> координаты: делим    на yConvert.
-	double yConvert;
+	const double yConvert;
+
+	const double xMin_c;
+	const double xMax_c;
+
+	const double yMin_c;
+	const double yMax_c;
 };
 
 //***///***///---\\\***\\\***\\\___///***___***\\\___///***///***///---\\\***\\\***\\ 

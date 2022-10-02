@@ -1,21 +1,32 @@
-#include <stdio.h>
-
-#include "Raycasting/RaycastingTest.hpp"
+#include "Iterator.hpp"
 
 //***///***///---\\\***\\\***\\\___///***___***\\\___///***///***///---\\\***\\\***\\ 
 //***///***///---\\\***\\\***\\\___///***___***\\\___///***///***///---\\\***\\\***\\ 
 
-#include "Vector/Matrix3.hpp"
-#include <iostream>
-
-using namespace std;
-
-int main(int argc, char* argv[])
+Iterator::Iterator(const double min, const double max, const double step) :
+	min(min),
+	max(max),
+	step(step)
 {
-	//TestSimple();
-	TestLightCircle();
+}
 
-	return 0;
+double Iterator::GetNextValue(double value)
+{
+	value += step;
+
+	if (value > max)
+	{
+		value = max;
+		step = -step;
+	}
+
+	if (value < min)
+	{
+		value = min;
+		step = -step;
+	}
+
+	return value;
 }
 
 //***///***///---\\\***\\\***\\\___///***___***\\\___///***///***///---\\\***\\\***\\ 

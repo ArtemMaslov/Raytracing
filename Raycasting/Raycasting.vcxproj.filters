@@ -10,6 +10,9 @@
     <Filter Include="Graphics">
       <UniqueIdentifier>{bdc3e401-4a85-452b-bdb8-32d0bb52e024}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Animation">
+      <UniqueIdentifier>{ced745c9-9509-4755-8354-ab8970b2a566}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Graphics\CoordinateSystem.cpp">
@@ -18,7 +21,7 @@
     <ClCompile Include="Graphics\Graphics.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="Vector\Vector.cpp">
+    <ClCompile Include="Vector\Vector3.cpp">
       <Filter>Vector</Filter>
     </ClCompile>
     <ClCompile Include="Raycasting\Raycasting.cpp">
@@ -28,6 +31,27 @@
     <ClCompile Include="Graphics\Color.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="Graphics\DoubleMath.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation\Iterator.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="Raycasting\RaycastingTest.cpp">
+      <Filter>Raycasting</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector\Matrix2.cpp">
+      <Filter>Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector\Basis.cpp">
+      <Filter>Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector\Vector2.cpp">
+      <Filter>Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector\Matrix3.cpp">
+      <Filter>Vector</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Graphics\CoordinateSystem.hpp">
@@ -36,14 +60,35 @@
     <ClInclude Include="Graphics\Graphics.hpp">
       <Filter>Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="Vector\Vector.hpp">
+    <ClInclude Include="Vector\Vector3.hpp">
       <Filter>Vector</Filter>
     </ClInclude>
     <ClInclude Include="Raycasting\Raycasting.hpp">
       <Filter>Raycasting</Filter>
     </ClInclude>
-    <ClInclude Include="Graphics\Color.h">
+    <ClInclude Include="Graphics\Color.hpp">
       <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\DoubleMath.hpp">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation\Iterator.hpp">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Raycasting\RaycastingTest.hpp">
+      <Filter>Raycasting</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector\Matrix2.hpp">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector\Basis.hpp">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector\Vector2.hpp">
+      <Filter>Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector\Matrix3.hpp">
+      <Filter>Vector</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
